@@ -1,0 +1,19 @@
+#Python code to move all empty counters (represented by 0) to the end of the array while maintaining the order of the plates, and also return the count of empty counters and the count of counters with pla
+def organize_kitchen(plates):
+    counters_with_plates = []
+    empty_counter_count = 0
+    plate_counter_count = 0
+    for plate in plates:
+        if plate != 0:
+            counters_with_plates.append(plate)
+            plate_counter_count += 1
+        else:
+            empty_counter_count += 1
+    counters_with_plates.extend([0] * empty_counter_count)
+    return counters_with_plates, empty_counter_count, plate_counter_count
+plates = [1, 0, 0, 2, 3, 0, 4, 5]
+new_plates, empty_count, plate_count = organize_kitchen(plates)
+print("Array after moving empty counters to the end:", new_plates)
+print("Count of empty counters:", empty_count)
+print("Count of counters with plates:", plate_count)
+
