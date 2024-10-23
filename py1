@@ -1,0 +1,30 @@
+#Here's the Python code to solve the Red Pen Green Pen problem by calculating the number of times you need to switch between a green pen (for odd numbers) and a red pen (for even numbers):
+def count_pen_switches(numbers):
+    # Initialize the switch count and previous pen type
+    switch_count = 0
+    previous_pen = None
+    
+    # Iterate over the list of numbers
+    for num in numbers:
+        if num % 2 == 0:  # Even number (red pen)
+            current_pen = 'red'
+        else:  # Odd number (green pen)
+            current_pen = 'green'
+        
+        # Check if a switch is needed
+        if previous_pen and current_pen != previous_pen:
+            switch_count += 1
+        
+        # Update the previous pen type for the next iteration
+        previous_pen = current_pen
+    
+    return switch_count
+
+# Sample input
+numbers = [1, 2, 3, 4, 5, 6]
+
+# Call the function to count pen switches
+result = count_pen_switches(numbers)
+
+# Print the result
+print(f"Number of pen switches: {result}")
