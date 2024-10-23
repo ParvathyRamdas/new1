@@ -1,0 +1,10 @@
+# Python code to calculate the frequency of characters in the inventory string:
+from collections import Counter
+def calculate_frequency(inventory_list):
+    cleaned_inventory = inventory_list.replace(" ", "").replace(",", "")
+    frequency = Counter(cleaned_inventory)
+    for char, count in frequency.items():
+        print(f"{char}: {count}")
+inventory_list = "Apples 10, Bananas 5, Oranges 8, Apples 5, Grapes 12"
+calculate_frequency(inventory_list)
+
